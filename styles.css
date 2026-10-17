@@ -1,7 +1,4 @@
 :root {
-    /* =========================================
-       COLORS[cite: 1]
-       ========================================= */
     --color-surface: #fcf9f8;
     --color-surface-dim: #dcd9d9;
     --color-surface-bright: #fcf9f8;
@@ -58,11 +55,12 @@
     --color-on-background: #1b1c1c;
     --color-surface-variant: #e4e2e1;
 
+    --color-soft-background: #D8EAFF;
     /* =========================================
        TYPOGRAPHY[cite: 1]
        ========================================= */
     --font-family-display: 'Playfair Display', serif;
-    --font-family-body: 'DM Sans', sans-serif;
+    --font-family-body: 'Bellefair';
 
     /* Display Large */
     --text-display-lg-size: 64px;
@@ -158,6 +156,10 @@
 /* =========================================
       BACKGROUND COLORS
       ========================================= */
+.bg-soft-background {
+    background-color: var(--color-soft-background);
+}
+
 .bg-background {
     background-color: var(--color-background);
 }
@@ -191,6 +193,14 @@
 
 .font-body {
     font-family: var(--font-family-body);
+}
+
+.text-display-mobile {
+    font-family: var(--font-family-display);
+    font-size: var(--text-display-mobile-size);
+    font-weight: var(--text-display-mobile-weight);
+    line-height: var(--text-display-mobile-line-height);
+    letter-spacing: var(--text-display-mobile-letter-spacing);
 }
 
 .text-display-lg {
@@ -319,6 +329,7 @@
     padding: var(--space-3) var(--space-6);
     cursor: pointer;
     transition: background-color 0.2s ease;
+    text-decoration: none;
 }
 
 .btn-primary:hover {
@@ -346,10 +357,107 @@ header {
 }
 
 .wedding__presentation {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #d8eaff63;
+    gap: var(--space-6);
+    padding: var(--space-24) 0;
+}
+
+.wedding__presentation::before {
+        content: "";
+        position: absolute;
+        inset: -20px;
+        z-index: -1;
+
+        background: url("./assets/images/background.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: blur(4px);
+        max-width: 100%;
+}
+
+.wedding__details {
+    display: flex;
     background-color: var(--color-background);
+    justify-content: center;
+    padding: 45px;
+}
+
+.wedding__detail {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    max-width: 375px;
+    align-items: center;
+    padding: var(--space-4);
+    gap: var(--space-2);
+    border-radius: 10px;
+}
+
+.wedding__detail-image {
+    width: var(--space-10);
+}
+
+.wedding__detail-action {
+    text-decoration: none;
+}
+
+.wedding__our-history {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-4);
+    background-color: var(--color-background);
+}
+
+.wedding__our-history-gallery {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: var(--space-4) var(--space-5);
+    max-width: 350px;
+}
+
+.wedding__our-history-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    max-width: 20%;
+}
+
+.wedding__our-history-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    /* border: 1px solid var(--color-outline-variant); */
+    border-radius: var(--space-2);
+}
+
+.wedding__our-history-item-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.wedding__contact {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-5);
+    background-color: var(--color-background);
+}
+
+.wedding__close {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d8eaff63;
     gap: var(--space-6);
     padding: var(--space-24) 0;
 }
