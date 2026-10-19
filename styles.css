@@ -364,6 +364,7 @@ header {
     background-color: #d8eaff63;
     gap: var(--space-6);
     padding: var(--space-24) 0;
+    text-align: center;
 }
 
 .wedding__presentation::before {
